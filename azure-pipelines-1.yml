@@ -33,19 +33,6 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
-    
-
-
-- task: DownloadBuildArtifacts@1
-  inputs:
-    buildType: 'specific'
-    project: '812d558c-913d-4a60-90e5-d0093ab9b04f'
-    pipeline: '2'
-    buildVersionToDownload: 'latest'
-    downloadType: 'single'
-    artifactName: 'WebApp'
-    downloadPath: '$(System.ArtifactsDirectory)'
-    cleanDestinationFolder: true
 
 - task: AzureRmWebAppDeployment@4
   inputs:
@@ -53,4 +40,4 @@ steps:
     azureSubscription: 'Azure for Students(6e52dc81-b15e-47cd-9b5e-bd49c19be9d6)'
     appType: 'webApp'
     WebAppName: 'libwebapi'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
