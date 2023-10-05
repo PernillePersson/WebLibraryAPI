@@ -38,10 +38,14 @@ steps:
 
 - task: DownloadBuildArtifacts@1
   inputs:
-    buildType: 'current'
+    buildType: 'specific'
+    project: '812d558c-913d-4a60-90e5-d0093ab9b04f'
+    pipeline: '2'
+    buildVersionToDownload: 'latest'
     downloadType: 'single'
     artifactName: 'WebApp'
     downloadPath: '$(System.ArtifactsDirectory)'
+    cleanDestinationFolder: true
 
 - task: AzureRmWebAppDeployment@4
   inputs:
