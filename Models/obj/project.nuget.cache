@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bJwC7QX1iY40fOzPhoTg6ciwAUNHFR1t6UK1SZ+8EyGdi83vuOtTtxIHDHUK6U9vmBHXdRqoFwXcom0HuGLfWg==",
+  "dgSpecHash": "BRXTzVJ3mXrsU/1xgZoKQG7SJjSYezF9Vq1pmXUA8XjDYet0V5Pq6/kzI0unGw6A5sVCR2+IGnxn0+owbItLyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lokaladministrator\\Documents\\GitHub\\WebLibraryAPI\\Models\\Models.csproj",
+  "projectFilePath": "/Users/pernillepersson/RiderProjects/WebLibraryAPI/Models/Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

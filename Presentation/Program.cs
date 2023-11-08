@@ -15,9 +15,13 @@ public class Program
 
         // Add services to the container.
 
-        builder.Services.AddDbContext<LibraryContext>(opts => 
-            opts.UseSqlite("Data Source=./MyLibrary.db"));
+        builder.Services.AddDbContext<LibraryContext>(opts =>
+            opts.UseSqlServer("Server=EASV-DB4;Database=LibAPI;User Id=CSe2022t_t_1;Password=CSe2022tT1#;TrustServerCertificate=True;"));
+            //opts.UseSqlServer("Server=tcp:magnuslavermad.database.windows.net,1433;Initial Catalog=libwebapi;Persist Security Info=False;User ID=pernille;Password=Pkp12345;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            //opts.UseSqlite("Data Source=./MyLibrary.db"));
         builder.Services.AddAutoMapper(typeof(Program));
+        builder.Services.AddLogging();
+        builder.Services.AddCors();
         
         // Services
         builder.Services.AddScoped<IBookService, BookService>();
@@ -40,6 +44,12 @@ public class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
+
+        app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+        
 
         app.UseRouting();
         //app.UseHttpsRedirection();
